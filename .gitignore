@@ -1,0 +1,8 @@
+/build/
+/deployment/terraform/builds/
+/deployment/terraform/.terraform/
+/deployment/terraform/.terraform.lock.hcl
+/deployment/terraform/plan.txt
+/deployment/terraform/out.txt
+/.idea/
+/.vscode/

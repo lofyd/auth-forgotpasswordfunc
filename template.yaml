@@ -1,0 +1,28 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: Signup user in cognito
+Resources:
+  ApiGatewayApi:
+    Type: AWS::Serverless::Api
+    Properties:
+      StageName: dev
+  SignupFunc:
+    Type: AWS::Serverless::Function
+    Properties:
+      Events:
+        ApiEvent:
+          Type: Api
+          Properties:
+            Path: /forgotpassword
+            Method: post
+            RestApiId:
+              Ref: ApiGatewayApi    
+      CodeUri: build/
+      Handler: main
+      Runtime: provided.al2023
+      Environment:
+        Variables:
+          STAGE: dev
+
+
+
